@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaAngleDown, FaAngleUp, FaBars, FaMoon, FaPlus } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +37,7 @@ function Navbar() {
   };
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-sm p-2 shadow-sm">
+      <nav className="fixed top-0 left-0 z-50 w-full bg-white/80 backdrop-blur-sm p-2 shadow-sm content-center  h-[60px] md:h-auto">
         <div className="flex items-center justify-around">
           {/* logo div */}
           <div className="">
@@ -125,12 +126,12 @@ function Navbar() {
                     onMouseLeave={isMenuMouseLeave}
                     className="mt-5 p-6 w-full md:w-1/6 bg-white   rounded-lg shadow-2xl transition duration-300 ease-in-out absolute top-12 right-0 md:right-64"
                   >
-                    <ul className="flex flex-col gap-4 items-center">
-                      <li className="text-black hover:text-[#8b5cf6] cursor-pointer hover:font-medium font-sans">
-                        Blog Grid Page
+                    <ul className="flex flex-col gap-4 items-start">
+                      <li className="text-black hover:text-[#8b5cf6] cursor-pointer transition-all duration-200 ease-in font-sans">
+                        <NavLink to="/blog1">Blog Grid Page</NavLink>
                       </li>
-                      <li className="text-black hover:text-[#8b5cf6] cursor-pointer hover:font-medium font-sans">
-                        Blog Details Page
+                      <li className="text-black hover:text-[#8b5cf6] cursor-pointer transition-all duration-200 ease-in font-sans">
+                        <NavLink to="/blog2">Blog Details Page</NavLink>
                       </li>
                     </ul>
                   </div>
@@ -147,12 +148,12 @@ function Navbar() {
                   Download
                 </button>
                 <span>
-                  <FaMoon className="inline text-2xl" />
+                  <FaMoon className="inline text-2xl text-[#8b5cf6]" />
                 </span>
               </div>
             </div>
             <span
-              className="text-[40px]   lg:hidden cursor-pointer"
+              className="text-[30px]   lg:hidden cursor-pointer text-[#8b5cf6]"
               onClick={isOpenDiv}
             >
               {isOpen ? <FaPlus /> : <FaBars />}
@@ -176,8 +177,33 @@ function Navbar() {
                   <li className="text-gray-400 hover:text-[#8b5cf6] mx-5 text-md">
                     <a href="">Contact</a>
                   </li>
-                  <li className="text-gray-400 hover:text-[#8b5cf6] mx-5 text-md">
-                    <a href="">Pages</a>
+                  <li
+                    className="text-gray-400 group  mx-5 text-md"
+                    onMouseEnter={isMenuMouseEnter}
+                  >
+                    <a href="" className="hover:text-[#8b5cf6]">
+                      Pages{" "}
+                      <span>
+                        <FaAngleDown className="inline" />
+                      </span>
+                    </a>
+                    {/* Toggle-able Div */}
+                    {isMenu && (
+                      <div
+                        onMouseEnter={isMenuMouseEnter}
+                        onMouseLeave={isMenuMouseLeave}
+                        className="mt-5 p-6 w-full md:w-1/6 bg-white   rounded-lg shadow-2xl transition duration-300 ease-in-out absolute top-12 right-0 md:right-64"
+                      >
+                        <ul className="flex flex-col gap-4 items-start">
+                          <li className="text-black hover:text-[#8b5cf6] cursor-pointer transition-all duration-200 ease-in font-sans">
+                            <NavLink to="/blog1">Blog Grid Page</NavLink>
+                          </li>
+                          <li className="text-black hover:text-[#8b5cf6] cursor-pointer transition-all duration-200 ease-in font-sans">
+                            <NavLink to="/blog2">Blog Details Page</NavLink>
+                          </li>
+                        </ul>
+                      </div>
+                    )}
                   </li>
                 </ul>
               </div>
