@@ -16,7 +16,7 @@ function Blog2() {
       <div className="mt-28 flex items-center justify-center">
         <div className="relative -z-10 w-full md:w-[80%] md:h-[450px]  ">
           <img src={blog5} alt="" className="rounded-xl w-[100%] h-[100%] " />
-          <div className="absolute  rounded-xl bottom-0 h-32 left-0 w-full px-8  bg-black/50 backdrop-blur-sm p-2 shadow-2xl overflow-hidden">
+          <div className="absolute  rounded-xl  bottom-0 left-0 w-full h-auto md:h-32 px-8  bg-black/50 backdrop-blur-sm p-2 shadow-2xl overflow-hidden">
             <h1 className="hover:text-[#8B5cf5] text-white text-start font-sans font-bold text-lg cursor-pointer ">
               50+ High rated online banking mobile apps on playstore.
             </h1>
@@ -92,7 +92,7 @@ function Blog2() {
           <h1 className="font-medium mt-6 mb-2 font-sans  text-gray-400">
             Popular Tags :
           </h1>
-          <div className="flex  items-center gap-4">
+          <div className="flex  items-center gap-4 flex-wrap">
             <button className="py-1 px-6 bg-gray-100 rounded-lg  font-sans font-medium text-gray-400 hover:bg-[#8a5cf5] transition-all duration-150 ease-in hover:text-white">
               Desing
             </button>
