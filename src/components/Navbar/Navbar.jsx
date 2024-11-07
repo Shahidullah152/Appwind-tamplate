@@ -110,7 +110,7 @@ function Navbar() {
                 <a href="">Contact</a>
               </li>
               <li
-                className="text-gray-400 group  mx-5 text-md"
+                className="text-gray-400 group  mx-5 text-md relative"
                 onMouseEnter={isMenuMouseEnter}
               >
                 <a href="" className="hover:text-[#8b5cf6]">
@@ -124,7 +124,7 @@ function Navbar() {
                   <div
                     onMouseEnter={isMenuMouseEnter}
                     onMouseLeave={isMenuMouseLeave}
-                    className="mt-5 p-6 w-full md:w-1/6 bg-white   rounded-lg shadow-2xl transition duration-300 ease-in-out absolute top-12 right-0 md:right-64"
+                    className="mt-5 p-6  bg-white  rounded-md shadow-2xl shadow-indigo-800  transition duration-300 ease-in-out w-[250px] absolute top-6 -right-28"
                   >
                     <ul className="flex flex-col gap-4 items-start">
                       <li className="text-black hover:text-[#8b5cf6] cursor-pointer transition-all duration-200 ease-in font-sans">
@@ -160,7 +160,7 @@ function Navbar() {
             </span>
             {/* Toggle-able Div */}
             {isOpen && (
-              <div className="mt-5 p-6 w-full md:w-1/3 bg-white   rounded-lg shadow-xl transition duration-300 ease-in-out absolute top-14 right-0 md:right-10">
+              <div className="mt-5 p-6 w-full md:w-1/3 bg-white lg:hidden   rounded-lg shadow-xl transition duration-300 ease-in-out absolute top-14 right-0 md:right-10">
                 <ul className=" list-none flex flex-col gap-6 items-center">
                   <li className="text-gray-400 hover:text-[#8b5cf6] mx-5 text-md">
                     <a href="">Features</a>
@@ -178,7 +178,7 @@ function Navbar() {
                     <a href="">Contact</a>
                   </li>
                   <li
-                    className="text-gray-400 group  mx-5 text-md"
+                    className="text-gray-400 group  mx-5 text-md relative"
                     onMouseEnter={isMenuMouseEnter}
                   >
                     <a href="" className="hover:text-[#8b5cf6]">
@@ -192,7 +192,7 @@ function Navbar() {
                       <div
                         onMouseEnter={isMenuMouseEnter}
                         onMouseLeave={isMenuMouseLeave}
-                        className="mt-5 p-6 w-full md:w-1/6 bg-white   rounded-lg shadow-2xl transition duration-300 ease-in-out absolute top-12 right-0 md:right-64"
+                        className="mt-5 p-6 w-[250px] bg-white   rounded-md shadow-2xl shadow-indigo-600 transition duration-300 ease-in-out absolute -right-24"
                       >
                         <ul className="flex flex-col gap-4 items-start">
                           <li className="text-black hover:text-[#8b5cf6] cursor-pointer transition-all duration-200 ease-in font-sans">
