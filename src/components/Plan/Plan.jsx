@@ -1,12 +1,19 @@
+/* eslint-disable react/prop-types */
 import { FaCheck } from "react-icons/fa";
 
-function Plan() {
+function Plan({ DarkMode }) {
   return (
     <>
       <div className="mt-24">
         {/* heading & text */}
         <div className="mb-20">
-          <h1 className="text-4xl font-sans font-bold my-4">Flexible Plans</h1>
+          <h1
+            className={`text-4xl font-sans font-bold my-4 ${
+              DarkMode ? "text-white" : "text-black"
+            }`}
+          >
+            Flexible Plans
+          </h1>
           <p className="text-gray-400 font-medium  ">
             There are many variations of passages of Lorem Ipsum available{" "}
             <br /> but the majority have suffered alteration in some form.
@@ -125,8 +132,14 @@ function Plan() {
               ></circle>
             </svg>
             <div className="flex flex-col items-start  gap-5 px-8 pb-12 pt-6">
-              <h1 className="font-bold font-sans text-2xl">Basic Plan</h1>
-              <h1 className="font-bold font-sans text-3xl">
+              <h1
+                className={`font-bold font-sans text-2xl ${
+                  DarkMode ? "text-white" : "text-black"
+                }`}
+              >
+                Basic Plan
+              </h1>
+              <h1 className="font-bold font-sans text-3xl text-[#8B5cf5]">
                 $35 <sub className="text-gray-400">/month</sub>
               </h1>
 
@@ -259,8 +272,14 @@ function Plan() {
               ></circle>
             </svg>
             <div className="flex flex-col items-start  gap-5 px-8 pb-12 pt-6">
-              <h1 className="font-bold font-sans text-2xl">Popular Plan</h1>
-              <h1 className="font-bold font-sans text-3xl">
+              <h1
+                className={`font-bold font-sans text-2xl ${
+                  DarkMode ? "text-white" : "text-black"
+                }`}
+              >
+                Popular Plan
+              </h1>
+              <h1 className="font-bold font-sans text-3xl text-[#8B5cf5]">
                 $99 <sub className="text-gray-400">/month</sub>
               </h1>
 
@@ -393,8 +412,14 @@ function Plan() {
               ></circle>
             </svg>
             <div className="flex flex-col items-start  gap-5 px-8 pb-12 pt-6">
-              <h1 className="font-bold font-sans text-2xl">Golden Plan</h1>
-              <h1 className="font-bold font-sans text-3xl">
+              <h1
+                className={`font-bold font-sans text-2xl ${
+                  DarkMode ? "text-white" : "text-black"
+                }`}
+              >
+                Golden Plan
+              </h1>
+              <h1 className="font-bold font-sans text-3xl text-[#8B5cf5]">
                 $159 <sub className="text-gray-400">/month</sub>
               </h1>
 

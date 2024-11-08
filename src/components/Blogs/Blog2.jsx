@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   FaArrowRight,
   FaCalendar,
@@ -10,7 +11,7 @@ import blog5 from "../../assets/images/articles/blog-5.jpg";
 import img1 from "../../assets/image-1.png";
 import { FaMessage } from "react-icons/fa6";
 
-function Blog2() {
+function Blog2({ DarkMode }) {
   return (
     <>
       <div className="mt-28 flex items-center justify-center">
@@ -59,7 +60,11 @@ function Blog2() {
             enim nulla aliquet porttitor. Odio pellentesque diam volutpat
             commodo sed.
           </p>
-          <h1 className="text-2xl font-sans font-bold">
+          <h1
+            className={`text-2xl font-sans font-bold ${
+              DarkMode ? "text-white" : "text-black"
+            }`}
+          >
             Online banking mobile lists
           </h1>
           <p className="text-gray-400 font-sans font-normal">
@@ -93,13 +98,25 @@ function Blog2() {
             Popular Tags :
           </h1>
           <div className="flex  items-center gap-4 flex-wrap">
-            <button className="py-1 px-6 bg-gray-100 rounded-lg  font-sans font-medium text-gray-400 hover:bg-[#8a5cf5] transition-all duration-150 ease-in hover:text-white">
+            <button
+              className={`py-1 px-6  ${
+                DarkMode ? "bg-gray-700" : "bg-gray-100"
+              } rounded-lg  font-sans font-medium text-gray-400 hover:bg-[#8a5cf5] transition-all duration-150 ease-in hover:text-white`}
+            >
               Desing
             </button>
-            <button className="py-1 px-6 bg-gray-100 rounded-lg  font-sans font-medium text-gray-400 hover:bg-[#8a5cf5] transition-all duration-150 ease-in hover:text-white">
+            <button
+              className={`py-1 px-6  ${
+                DarkMode ? "bg-gray-700" : "bg-gray-100"
+              } rounded-lg  font-sans font-medium text-gray-400 hover:bg-[#8a5cf5] transition-all duration-150 ease-in hover:text-white`}
+            >
               Development
             </button>
-            <button className="py-1 px-6 bg-gray-100 rounded-lg  font-sans font-medium text-gray-400 hover:bg-[#8a5cf5] transition-all duration-150 ease-in hover:text-white">
+            <button
+              className={`py-1 px-6  ${
+                DarkMode ? "bg-gray-700" : "bg-gray-100"
+              } rounded-lg  font-sans font-medium text-gray-400 hover:bg-[#8a5cf5] transition-all duration-150 ease-in hover:text-white`}
+            >
               Info
             </button>
           </div>
@@ -109,13 +126,25 @@ function Blog2() {
             Share this post :
           </h1>
           <div className="flex  items-center gap-4">
-            <button className="p-2 bg-gray-100 rounded-lg  font-sans font-medium text-gray-400 hover:bg-[#8a5cf5] transition-all duration-150 ease-in hover:text-white">
+            <button
+              className={`p-2 ${
+                DarkMode ? "bg-gray-700" : "bg-gray-100"
+              } rounded-lg  font-sans font-medium text-gray-400 hover:bg-[#8a5cf5] transition-all duration-150 ease-in hover:text-white`}
+            >
               <FaLinkedin />
             </button>
-            <button className="p-2 bg-gray-100 rounded-lg  font-sans font-medium text-gray-400 hover:bg-[#8a5cf5] transition-all duration-150 ease-in hover:text-white">
+            <button
+              className={`p-2 ${
+                DarkMode ? "bg-gray-700" : "bg-gray-100"
+              } rounded-lg  font-sans font-medium text-gray-400 hover:bg-[#8a5cf5] transition-all duration-150 ease-in hover:text-white`}
+            >
               <FaTwitter />
             </button>
-            <button className="p-2 bg-gray-100 rounded-lg  font-sans font-medium text-gray-400 hover:bg-[#8a5cf5] transition-all duration-150 ease-in hover:text-white">
+            <button
+              className={`p-2 ${
+                DarkMode ? "bg-gray-700" : "bg-gray-100"
+              } rounded-lg  font-sans font-medium text-gray-400 hover:bg-[#8a5cf5] transition-all duration-150 ease-in hover:text-white`}
+            >
               <FaFacebookF />
             </button>
           </div>

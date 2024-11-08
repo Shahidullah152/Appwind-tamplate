@@ -1,16 +1,26 @@
+/* eslint-disable no-unused-vars */
 import img1 from "../../assets/image-1.png";
 import img2 from "../../assets/image-2.png";
 import img3 from "../../assets/image-3.png";
 import img4 from "../../assets/image-4.png";
 import img5 from "../../assets/image-5.png";
 import img6 from "../../assets/image-6.png";
-function Client() {
+// eslint-disable-next-line react/prop-types
+function Client({ DarkMode }) {
   return (
     <>
-      <div className="bg-blue-100  mt-32 py-20 rounded-xl ">
+      <div
+        className={` ${
+          DarkMode ? "bg-gray-700" : "bg-blue-100"
+        }  mt-32 py-20 rounded-xl "`}
+      >
         {/* heading & text */}
         <div className="mb-16">
-          <h1 className="text-4xl font-sans font-bold my-4">
+          <h1
+            className={`text-4xl font-sans font-bold my-4 ${
+              DarkMode ? "text-white" : "text-black"
+            }`}
+          >
             What Clients Say?
           </h1>
           <p className="text-gray-400 font-medium  ">
@@ -20,8 +30,12 @@ function Client() {
         </div>
 
         {/* cards */}
-        <div className="flex items-center justify-evenly flex-wrap gap-x-4 gap-y-8">
-          <div className="w-[350px] h-auto  cursor-pointer font-sans group hover:bg-[#8B5cf5] transition-all duration-100 hover:text-white ease-in h-auto shadow-xl rounded-tr-xl rounded-br-xl rounded-bl-xl  bg-white">
+        <div className="flex items-center justify-evenly flex-wrap gap-x-4 gap-y-8 px-2">
+          <div
+            className={` w-[350px] h-auto  cursor-pointer font-sans group hover:bg-[#8B5cf5] transition-all duration-100 hover:text-white ease-in h-auto shadow-xl rounded-tr-xl rounded-br-xl rounded-bl-xl  ${
+              DarkMode ? "bg-gray-800 text-white" : "bg-white"
+            }`}
+          >
             <svg
               className="overflow-hidden ms-auto me-2 "
               width="63"
@@ -148,7 +162,11 @@ function Client() {
               </div>
             </div>
           </div>
-          <div className="w-[350px] h-auto  cursor-pointer font-sans group hover:bg-[#8B5cf5] transition-all duration-100 hover:text-white ease-in h-auto shadow-xl rounded-tr-xl rounded-br-xl rounded-bl-xl  bg-white">
+          <div
+            className={` w-[350px] h-auto  cursor-pointer font-sans group hover:bg-[#8B5cf5] transition-all duration-100 hover:text-white ease-in h-auto shadow-xl rounded-tr-xl rounded-br-xl rounded-bl-xl  ${
+              DarkMode ? "bg-gray-800 text-white" : "bg-white"
+            }`}
+          >
             <svg
               className="overflow-hidden ms-auto me-2 "
               width="63"
@@ -275,7 +293,11 @@ function Client() {
               </div>
             </div>
           </div>
-          <div className="w-[350px] h-auto  cursor-pointer font-sans group hover:bg-[#8B5cf5] transition-all duration-100 hover:text-white ease-in h-auto shadow-xl rounded-tr-xl rounded-br-xl rounded-bl-xl  bg-white">
+          <div
+            className={` w-[350px] h-auto  cursor-pointer font-sans group hover:bg-[#8B5cf5] transition-all duration-100 hover:text-white ease-in h-auto shadow-xl rounded-tr-xl rounded-br-xl rounded-bl-xl  ${
+              DarkMode ? "bg-gray-800 text-white" : "bg-white"
+            }`}
+          >
             <svg
               className="overflow-hidden ms-auto me-2 "
               width="63"
@@ -402,7 +424,11 @@ function Client() {
               </div>
             </div>
           </div>
-          <div className="w-[350px] h-auto  cursor-pointer font-sans group hover:bg-[#8B5cf5] transition-all duration-100 hover:text-white ease-in h-auto shadow-xl rounded-tr-xl rounded-br-xl rounded-bl-xl  bg-white">
+          <div
+            className={` w-[350px] h-auto  cursor-pointer font-sans group hover:bg-[#8B5cf5] transition-all duration-100 hover:text-white ease-in h-auto shadow-xl rounded-tr-xl rounded-br-xl rounded-bl-xl  ${
+              DarkMode ? "bg-gray-800 text-white" : "bg-white"
+            }`}
+          >
             <svg
               className="overflow-hidden ms-auto me-2 "
               width="63"
@@ -529,7 +555,11 @@ function Client() {
               </div>
             </div>
           </div>
-          <div className="w-[350px] h-auto  cursor-pointer font-sans group hover:bg-[#8B5cf5] transition-all duration-100 hover:text-white ease-in h-auto shadow-xl rounded-tr-xl rounded-br-xl rounded-bl-xl  bg-white">
+          <div
+            className={` w-[350px] h-auto  cursor-pointer font-sans group hover:bg-[#8B5cf5] transition-all duration-100 hover:text-white ease-in h-auto shadow-xl rounded-tr-xl rounded-br-xl rounded-bl-xl  ${
+              DarkMode ? "bg-gray-800 text-white" : "bg-white"
+            }`}
+          >
             <svg
               className="overflow-hidden ms-auto me-2 "
               width="63"
@@ -656,7 +686,11 @@ function Client() {
               </div>
             </div>
           </div>
-          <div className="w-[350px] h-auto  cursor-pointer font-sans group hover:bg-[#8B5cf5] transition-all duration-100 hover:text-white ease-in h-auto shadow-xl rounded-tr-xl rounded-br-xl rounded-bl-xl  bg-white">
+          <div
+            className={` w-[350px] h-auto  cursor-pointer font-sans group hover:bg-[#8B5cf5] transition-all duration-100 hover:text-white ease-in h-auto shadow-xl rounded-tr-xl rounded-br-xl rounded-bl-xl  ${
+              DarkMode ? "bg-gray-800 text-white" : "bg-white"
+            }`}
+          >
             <svg
               className="overflow-hidden ms-auto me-2 "
               width="63"

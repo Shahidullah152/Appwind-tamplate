@@ -1,15 +1,20 @@
+/* eslint-disable react/prop-types */
 import { FaArrowRight } from "react-icons/fa";
 import img1 from "../../assets/images/articles/blog-1.jpg";
 import img2 from "../../assets/images/articles/blog-2.jpg";
 import img3 from "../../assets/images/articles/blog-3.jpg";
-function Article() {
+function Article({ DarkMode }) {
   return (
     <>
       <div className="mt-32">
         {/* heading & text */}
         <div className="mb-16">
-          <h1 className="text-4xl font-sans font-bold my-4">
-            Frequently Asked Questions
+          <h1
+            className={`text-4xl font-sans font-bold my-4 ${
+              DarkMode ? "text-white" : "text-black"
+            }`}
+          >
+            Recent Articles
           </h1>
           <p className="text-gray-400 font-medium  ">
             There are many variations of passages of Lorem Ipsum available{" "}

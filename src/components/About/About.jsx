@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { FaArrowRight } from "react-icons/fa";
 import AboutIMG1 from "../../assets/images/About/about-image-1.svg";
 import AboutIMG2 from "../../assets/images/About/about-image-2.svg";
-function About() {
+function About({ DarkMode }) {
   return (
     <>
       <div className="mt-32 ">
@@ -15,7 +16,11 @@ function About() {
             <h2 className="text-lg font-sans font-medium text-[#8B5cF5]">
               About Application
             </h2>
-            <h2 className="text-3xl font-bold font-sans">
+            <h2
+              className={`text-3xl font-bold font-sans ${
+                DarkMode ? "text-white" : "text-black"
+              }`}
+            >
               Instant Payment Transfer <br /> SavesYou Time
             </h2>
             <p className="text-gray-400 font-sans font-medium tracking-wider">
@@ -37,7 +42,11 @@ function About() {
             <h2 className="text-lg font-sans font-medium text-[#8B5cF5]">
               Easy to Manage Appwind
             </h2>
-            <h2 className="text-3xl font-bold font-sans">
+            <h2
+              className={`text-3xl font-bold font-sans ${
+                DarkMode ? "text-white" : "text-black"
+              }`}
+            >
               Manage your online wallet <br /> with Appwind.
             </h2>
             <p className="text-gray-400 font-sans font-medium tracking-wider">

@@ -14,49 +14,58 @@ import Plan from "./components/Plan/Plan";
 import Question from "./components/Question/Question";
 import Work from "./components/Work/Work";
 import Blog2 from "./components/Blogs/Blog2";
+import { useState } from "react";
+import { getDarkMode, toggleDarkMode } from "./components/Themes/Themes";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: (
-      <>
-        <Navbar />
-        <Hero />
-        <Award />
-        <About />
-        <Work />
-        <Plan />
-        <Client />
-        <Question />
-        <Article />
-        <Company />
-        <Help />
-        <Footer />
-      </>
-    ),
-  },
-  {
-    path: "/blog1",
-    element: (
-      <>
-        <Navbar />
-        <Blog1 />
-        <Footer />
-      </>
-    ),
-  },
-  {
-    path: "/blog2",
-    element: (
-      <>
-        <Navbar />
-        <Blog2 />
-        <Footer />
-      </>
-    ),
-  },
-]);
 function App() {
+  // Dark & Ligth Mode Functionality
+  const [DarkMode, setDarkMode] = useState(getDarkMode());
+
+  const handleDarkMode = () => {
+    const newMode = toggleDarkMode();
+    setDarkMode(newMode);
+  };
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <>
+          <Navbar DarkMode={DarkMode} handleDarkMode={handleDarkMode} />
+          <Hero />
+          <Award DarkMode={DarkMode} />
+          <About DarkMode={DarkMode} />
+          <Work DarkMode={DarkMode} />
+          <Plan DarkMode={DarkMode} />
+          <Client DarkMode={DarkMode} />
+          <Question DarkMode={DarkMode} />
+          <Article DarkMode={DarkMode} />
+          <Company DarkMode={DarkMode} />
+          <Help DarkMode={DarkMode} />
+          <Footer DarkMode={DarkMode} />
+        </>
+      ),
+    },
+    {
+      path: "/blog1",
+      element: (
+        <>
+          <Navbar DarkMode={DarkMode} handleDarkMode={handleDarkMode} />
+          <Blog1 DarkMode={DarkMode} />
+          <Footer DarkMode={DarkMode} />
+        </>
+      ),
+    },
+    {
+      path: "/blog2",
+      element: (
+        <>
+          <Navbar DarkMode={DarkMode} handleDarkMode={handleDarkMode} />
+          <Blog2 DarkMode={DarkMode} />
+          <Footer DarkMode={DarkMode} />
+        </>
+      ),
+    },
+  ]);
   return (
     <>
       <RouterProvider router={router} />

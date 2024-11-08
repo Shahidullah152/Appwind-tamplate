@@ -1,6 +1,6 @@
+/* eslint-disable react/prop-types */
 import {
   FaApple,
-  FaApplePay,
   FaDownload,
   FaGooglePlay,
   FaHandHoldingUsd,
@@ -8,13 +8,19 @@ import {
 } from "react-icons/fa";
 import AppIMG1 from "../../assets/images/download/cta-image-1.svg";
 import AppIMG2 from "../../assets/images/download/cta-image-2.svg";
-function Work() {
+function Work({ DarkMode }) {
   return (
     <>
       <div className="mt-20">
         {/* heading & text */}
         <div className="mb-16">
-          <h1 className="text-4xl font-sans font-bold my-4">How it Works?</h1>
+          <h1
+            className={`text-4xl font-sans font-bold my-4 ${
+              DarkMode ? "text-white" : "text-black"
+            }`}
+          >
+            How it Works?
+          </h1>
           <p className="text-gray-400 font-medium  ">
             There are many variations of passages of Lorem Ipsum available{" "}
             <br /> but the majority have suffered alteration in some form.
@@ -24,36 +30,66 @@ function Work() {
         {/* Cards */}
         <div className="flex items-center justify-center gap-5 flex-wrap ">
           <div className="w-96 rounded-xl  h-auto p-2 group cursor-pointer flex flex-col items-center justify-center gap-4">
-            <div className="w-16 h-16 bg-gray-100  group-hover:bg-[#8B5cF5] rounded-2xl flex items-center justify-center transition duration-300 ease-in-out">
+            <div
+              className={`w-16 h-16 ${
+                DarkMode ? "bg-gray-700" : "bg-gray-100"
+              }  group-hover:bg-[#8B5cF5] rounded-2xl flex items-center justify-center transition duration-300 ease-in-out`}
+            >
               <span>
                 <FaDownload className="text-[#8B5cF5] group-hover:text-white text-2xl transition duration-300 ease-in-out" />
               </span>
             </div>
-            <h1 className="text-lg font-sans font-bold">Download for Free</h1>
+            <h1
+              className={`text-lg font-sans font-bold ${
+                DarkMode ? "text-white" : "text-black"
+              }`}
+            >
+              Download for Free
+            </h1>
             <p className="text-md font-sans text-gray-400 ">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit lectus non
               ipsum.
             </p>
           </div>
           <div className="w-96 rounded-xl  h-auto p-2 group cursor-pointer flex flex-col items-center justify-center gap-4">
-            <div className="w-16 h-16 bg-gray-100  group-hover:bg-[#8B5cF5] rounded-2xl flex items-center justify-center transition duration-300 ease-in-out">
+            <div
+              className={`w-16 h-16 ${
+                DarkMode ? "bg-gray-700" : "bg-gray-100"
+              }  group-hover:bg-[#8B5cF5] rounded-2xl flex items-center justify-center transition duration-300 ease-in-out`}
+            >
               <span>
                 <FaUser className="text-[#8B5cF5] group-hover:text-white text-2xl transition duration-300 ease-in-out" />
               </span>
             </div>
-            <h1 className="text-lg font-sans font-bold">Open an Account</h1>
+            <h1
+              className={`text-lg font-sans font-bold ${
+                DarkMode ? "text-white" : "text-black"
+              }`}
+            >
+              Open an Account
+            </h1>
             <p className="text-md font-sans text-gray-400 ">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit lectus non
               ipsum.
             </p>
           </div>
           <div className="w-96 rounded-xl  h-auto p-2 group cursor-pointer flex flex-col items-center justify-center gap-4">
-            <div className="w-16 h-16 bg-gray-100  group-hover:bg-[#8B5cF5] rounded-2xl flex items-center justify-center transition duration-300 ease-in-out">
+            <div
+              className={`w-16 h-16 ${
+                DarkMode ? "bg-gray-700" : "bg-gray-100"
+              }  group-hover:bg-[#8B5cF5] rounded-2xl flex items-center justify-center transition duration-300 ease-in-out`}
+            >
               <span>
                 <FaHandHoldingUsd className="text-[#8B5cF5] group-hover:text-white text-2xl transition duration-300 ease-in-out" />
               </span>
             </div>
-            <h1 className="text-lg font-sans font-bold">Enjoy our App</h1>
+            <h1
+              className={`text-lg font-sans font-bold ${
+                DarkMode ? "text-white" : "text-black"
+              }`}
+            >
+              Enjoy our App
+            </h1>
             <p className="text-md font-sans text-gray-400 ">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit lectus non
               ipsum.
@@ -109,8 +145,8 @@ function Work() {
 
             {/* image */}
             <div className="flex ">
-              <img src={AppIMG1} alt="" className="w-40 md:w-full" />
-              <img src={AppIMG2} alt="" className="w-40 md:w-full" />
+              <img src={AppIMG1} alt="" className="w-36 md:w-full" />
+              <img src={AppIMG2} alt="" className="w-36 md:w-full" />
             </div>
           </div>
         </div>

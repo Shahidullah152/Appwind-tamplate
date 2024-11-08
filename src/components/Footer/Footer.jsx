@@ -1,16 +1,22 @@
+/* eslint-disable react/prop-types */
 import {
   FaFacebook,
   FaInstagram,
   FaLinkedin,
-  FaTelegram,
   FaTelegramPlane,
   FaTwitter,
 } from "react-icons/fa";
 import logo from "../../assets/images/Logo/logo3.svg";
-function Footer() {
+import DarkLogo from "../../assets/images/Logo/logo4.svg";
+import LightLogo from "../../assets/images/Logo/logo3.svg";
+function Footer({ DarkMode }) {
   return (
     <>
-      <div className="bg-blue-100 w-full  rounded-xl relative ">
+      <div
+        className={` ${
+          DarkMode ? "bg-gray-700" : "bg-blue-100"
+        }  w-full  rounded-xl relative `}
+      >
         <svg
           className="overflow-hidden ms-auto me-2 "
           width="63"
@@ -121,7 +127,11 @@ function Footer() {
 
         <div className="py-16 px-8 flex items-center justify-center gap-8 flex-wrap">
           <div className="md:w-64 w-full">
-            <img src={logo} className="w-36" alt="" />
+            <img
+              src={DarkMode ? DarkLogo : LightLogo}
+              className="w-36"
+              alt=""
+            />
             <p className="text-start text-gray-400 font-medium my-7">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
               feugiat et sem at Etiam in lobortis dui. Praesent .
@@ -142,7 +152,11 @@ function Footer() {
             </div>
           </div>
           <div className="md:w-64 w-full">
-            <h1 className="text-start text-lg font-sans font-bold mb-5">
+            <h1
+              className={`text-start text-lg font-sans font-bold mb-5 ${
+                DarkMode ? "text-white" : "text-black"
+              }`}
+            >
               Quick Links
             </h1>
             <ul className="flex items-start flex-col gap-4">
@@ -161,7 +175,11 @@ function Footer() {
             </ul>
           </div>
           <div className="md:w-64 w-full">
-            <h1 className="text-start text-lg font-sans font-bold mb-5">
+            <h1
+              className={`text-start text-lg font-sans font-bold mb-5 ${
+                DarkMode ? "text-white" : "text-black"
+              }`}
+            >
               App Information
             </h1>
             <ul className="flex items-start flex-col gap-4">
@@ -180,7 +198,11 @@ function Footer() {
             </ul>
           </div>
           <div className="md:w-64 w-full">
-            <h1 className="text-start text-lg font-sans font-bold mb-5">
+            <h1
+              className={`text-start text-lg font-sans font-bold mb-5 ${
+                DarkMode ? "text-white" : "text-black"
+              }`}
+            >
               Join Our Newsletter
             </h1>
             <p className="text-gray-500 font-sans font-medium text-start">
@@ -191,7 +213,9 @@ function Footer() {
               <input
                 type="text"
                 placeholder="Enter Your email"
-                className="rounded-xl py-3 px-6 outline-none focus:border-[#8B5cf5] border-[1px] w-full"
+                className={`rounded-xl py-3 px-6 outline-none focus:border-[#8B5cf5] border-[1px] w-full ${
+                  DarkMode ? "bg-gray-800" : "bg-white"
+                }`}
               />
               <div className="w-10 h-10 rounded-xl bg-[#8B5cf5] flex items-center justify-center absolute right-4 top-1 ">
                 <FaTelegramPlane className="text-white text-lg rotate-12" />

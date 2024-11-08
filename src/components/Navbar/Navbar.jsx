@@ -1,8 +1,18 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
-import { FaAngleDown, FaAngleUp, FaBars, FaMoon, FaPlus } from "react-icons/fa";
+import {
+  FaAngleDown,
+  FaAngleUp,
+  FaBars,
+  FaMoon,
+  FaPlus,
+  FaSun,
+} from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import DarkLogo from "../../assets/images/Logo/logo4.svg";
+import LightLogo from "../../assets/images/Logo/logo3.svg";
 
-function Navbar() {
+function Navbar({ DarkMode, handleDarkMode }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isMenu, setIsMenu] = useState(false);
   const [isShowButton, setisShowButton] = useState(false);
@@ -35,13 +45,20 @@ function Navbar() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
   return (
     <>
-      <nav className="fixed top-0 left-0 z-50 w-full bg-white/80 backdrop-blur-sm p-2 shadow-sm content-center  h-[60px] md:h-auto">
+      <nav
+        className={
+          DarkMode
+            ? "fixed top-0 left-0 z-50 w-full bg-gray-800/90 backdrop-blur-sm p-2 shadow-xl content-center  h-[60px] md:h-auto"
+            : "fixed top-0 left-0 z-50 w-full bg-white/80 backdrop-blur-sm p-2 shadow-sm content-center  h-[60px] md:h-auto"
+        }
+      >
         <div className="flex items-center justify-around">
           {/* logo div */}
           <div className="">
-            <svg
+            {/* <svg
               width="140"
               height="28"
               viewBox="0 0 158 34"
@@ -89,7 +106,8 @@ function Navbar() {
                 d="M4.9792 4.979C1.79107 8.16713 2.23964e-07 12.4912 0 16.9999C-2.23964e-07 21.5085 1.79107 25.8326 4.9792 29.0207C8.16733 32.2088 12.4914 33.9999 17 33.9999C21.5087 33.9999 25.8328 32.2088 29.0209 29.0207L4.9792 4.979Z"
                 fill="#8B5CF6"
               />
-            </svg>
+            </svg> */}
+            <img src={DarkMode ? DarkLogo : LightLogo} alt="" />
           </div>
           {/* menus */}
           <div className="hidden lg:block">
@@ -112,6 +130,7 @@ function Navbar() {
               <li
                 className="text-gray-400 group  mx-5 text-md relative"
                 onMouseEnter={isMenuMouseEnter}
+                // onMouseLeave={isMenuMouseLeave}
               >
                 <a href="" className="hover:text-[#8b5cf6]">
                   Pages{" "}
@@ -124,13 +143,17 @@ function Navbar() {
                   <div
                     onMouseEnter={isMenuMouseEnter}
                     onMouseLeave={isMenuMouseLeave}
-                    className="mt-5 p-6  bg-white  rounded-md shadow-2xl shadow-indigo-800  transition duration-300 ease-in-out w-[250px] absolute top-6 -right-28"
+                    className={
+                      DarkMode
+                        ? "mt-5 p-6 w-[250px] bg-gray-800   rounded-md shadow-sm shadow-indigo-400 transition duration-300 ease-in-out absolute -right-24"
+                        : "mt-5 p-6 w-[250px] bg-white   rounded-md shadow-sm shadow-indigo-400 transition duration-300 ease-in-out absolute -right-24"
+                    }
                   >
                     <ul className="flex flex-col gap-4 items-start">
-                      <li className="text-black hover:text-[#8b5cf6] cursor-pointer transition-all duration-200 ease-in font-sans">
+                      <li className=" hover:text-[#8b5cf6] cursor-pointer transition-all duration-200 ease-in font-sans">
                         <NavLink to="/blog1">Blog Grid Page</NavLink>
                       </li>
-                      <li className="text-black hover:text-[#8b5cf6] cursor-pointer transition-all duration-200 ease-in font-sans">
+                      <li className=" hover:text-[#8b5cf6] cursor-pointer transition-all duration-200 ease-in font-sans">
                         <NavLink to="/blog2">Blog Details Page</NavLink>
                       </li>
                     </ul>
@@ -147,11 +170,22 @@ function Navbar() {
                 <button className="px-8 py-4 rounded-md bg-[#8b5cf6] text-white hover:shadow-lg hover:shadow-[#8a5cf643]">
                   Download
                 </button>
-                <span>
-                  <FaMoon className="inline text-2xl text-[#8b5cf6]" />
+                <span onClick={handleDarkMode}>
+                  {DarkMode ? (
+                    <FaSun className="inline text-2xl text-[#f6c55c]" />
+                  ) : (
+                    <FaMoon className="inline text-2xl text-[#8b5cf6]" />
+                  )}
                 </span>
               </div>
             </div>
+            <span onClick={handleDarkMode} className="md:hidden">
+              {DarkMode ? (
+                <FaSun className="inline text-2xl text-[#f6c55c]" />
+              ) : (
+                <FaMoon className="inline text-2xl text-[#8b5cf6]" />
+              )}
+            </span>
             <span
               className="text-[30px]   lg:hidden cursor-pointer text-[#8b5cf6]"
               onClick={isOpenDiv}
@@ -160,7 +194,13 @@ function Navbar() {
             </span>
             {/* Toggle-able Div */}
             {isOpen && (
-              <div className="mt-5 p-6 w-full md:w-1/3 bg-white lg:hidden   rounded-lg shadow-xl transition duration-300 ease-in-out absolute top-14 right-0 md:right-10">
+              <div
+                className={
+                  DarkMode
+                    ? "mt-5 p-6 w-full md:w-1/3 bg-gray-800 lg:hidden   rounded-lg shadow-2xl transition duration-300 ease-in-out absolute top-14 right-0 md:right-10"
+                    : "mt-5 p-6 w-full md:w-1/3 bg-white lg:hidden   rounded-lg shadow-xl transition duration-300 ease-in-out absolute top-14 right-0 md:right-10"
+                }
+              >
                 <ul className=" list-none flex flex-col gap-6 items-center">
                   <li className="text-gray-400 hover:text-[#8b5cf6] mx-5 text-md">
                     <a href="">Features</a>
@@ -192,13 +232,17 @@ function Navbar() {
                       <div
                         onMouseEnter={isMenuMouseEnter}
                         onMouseLeave={isMenuMouseLeave}
-                        className="mt-5 p-6 w-[250px] bg-white   rounded-md shadow-2xl shadow-indigo-600 transition duration-300 ease-in-out absolute -right-24"
+                        className={
+                          DarkMode
+                            ? "mt-5 p-6 w-[250px] bg-gray-800   rounded-md shadow-sm shadow-indigo-400 transition duration-300 ease-in-out absolute -right-24"
+                            : "mt-5 p-6 w-[250px] bg-white   rounded-md shadow-sm shadow-indigo-400 transition duration-300 ease-in-out absolute -right-24"
+                        }
                       >
                         <ul className="flex flex-col gap-4 items-start">
-                          <li className="text-black hover:text-[#8b5cf6] cursor-pointer transition-all duration-200 ease-in font-sans">
+                          <li className=" hover:text-[#8b5cf6] cursor-pointer transition-all duration-200 ease-in font-sans">
                             <NavLink to="/blog1">Blog Grid Page</NavLink>
                           </li>
-                          <li className="text-black hover:text-[#8b5cf6] cursor-pointer transition-all duration-200 ease-in font-sans">
+                          <li className=" hover:text-[#8b5cf6] cursor-pointer transition-all duration-200 ease-in font-sans">
                             <NavLink to="/blog2">Blog Details Page</NavLink>
                           </li>
                         </ul>

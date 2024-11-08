@@ -27,10 +27,10 @@ function Hero() {
               Explore
             </button>
             <div className="flex items-center justify-center gap-5 ms-8 group cursor-pointer">
-              <div className="w-14 h-14 bg-[#8a5cf61c] flex items-center group-hover:bg-[#8B5CF6]   transition-all duration-700 ease-out  justify-center rounded-full">
+              <div className="sm:w-14 sm:h-14 w-8 h-8 bg-[#8a5cf61c] flex items-center group-hover:bg-[#8B5CF6]   transition-all duration-700 ease-out  justify-center rounded-full">
                 <FaPlay className="inline text-[#8B5CF6] group-hover:text-white transition-all duration-700 ease-out " />
               </div>
-              <div className="font-medium group-hover:text-[#8B5CF6] transition-all duration-700 ease-out">
+              <div className="font-medium text-[10px] sm:text-[17px] group-hover:text-[#8B5CF6] transition-all duration-700 ease-out">
                 Watch Intro
               </div>
             </div>
